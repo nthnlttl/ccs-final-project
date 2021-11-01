@@ -39,15 +39,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'whitenoise.runserver_nostatic',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     # 3rd party
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'allauth.socialaccount',
 
     # local
     'accounts.apps.AccountsConfig',
     'frontend.apps.FrontendConfig',
 ]
+
+# Setting the permission policy
+# https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permission-policy
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,6 +96,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conf.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -146,5 +167,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
 
+# STATICFILES_DIRS
+# https://docs.djangoproject.com/en/3.1/ref/settings/#staticfiles-dirs
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# The "sites" framework
+# https://docs.djangoproject.com/en/3.2/ref/contrib/sites/
+
+SITE_ID = 1
+
+# Sending Email
+# https://docs.djangoproject.com/en/3.2/topics/email/#console-backend
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
