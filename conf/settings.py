@@ -25,8 +25,9 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "127.0.0.1:8000",
-    "final-project-ccs-nthnlttl.herokuapp.com"
+    "final-project-ccs-nthnlttl.herokuapp.com",
 ]
 
 
