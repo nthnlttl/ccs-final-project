@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
-import {Route, Switch, withRouter, useHistory} from 'react-router-dom';
+import { BrowswerRouter as Router, Switch, Route, useHistory} from 'react-router-dom';
 import './App.css';
+import Header from './../Header/Header'
 import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
 import Cookies from 'js-cookie';
@@ -48,15 +49,12 @@ const isAuth = user?.isAuth;
 
   return (
     <>
-    <Header isAuth={isAuth}/>
-    <Switch>
-      <Route path='/registration'>
-        <RegistrationForm isAuth={isAuth} setUser={setUser}/>
-      </Route>
-      <Route>
-        <LoginForm isAuth={isAuth} setUser={setUser} />
-      </Route>
-    </Switch>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path='/' exact />
+      </Switch>
+    </Router>
     </>
   );
 }
