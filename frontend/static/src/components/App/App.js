@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { BrowswerRouter as Router, Switch, Route, useHistory} from 'react-router-dom';
+import {  Route, Switch, withRouter, useHistory} from 'react-router-dom';
 import './App.css';
 import Header from './../Header/Header'
 import RegistrationForm from './../Registration/RegistrationForm';
@@ -46,15 +46,18 @@ async function handleLogout(event, props) {
 }
 
 const isAuth = user?.isAuth;
-
+const isAdmin = user?.isAdmin;
   return (
     <>
-    <Router>
-      <Header />
-      <Switch>
-        <Route path='/' exact />
-      </Switch>
-    </Router>
+    <Header isAuth={isAuth} isAdmin={isAdmin} handleLogout={handleLogout}/>
+    <Switch>
+      <Route path='/registration'>
+        <RegistrationForm isAuth={isAuth} setUser={setUser}/>
+      </Route>
+      <Route path='/login'>
+        <LoginForm isAuth={isAuth} setUser={setUser}/>
+      </Route>
+    </Switch>
     </>
   );
 }
