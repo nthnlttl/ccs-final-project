@@ -1,7 +1,8 @@
 from django.urls import path, include
 
-app_name = 'avi_v1'
+app_name = 'api_v1'
 
 urlpatterns = [
-    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('accounts/', include('accounts.urls')),
+    path('animals/', include('animals.urls')),
 ]

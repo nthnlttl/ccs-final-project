@@ -178,6 +178,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # The "sites" framework
 # https://docs.djangoproject.com/en/3.2/ref/contrib/sites/
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 SITE_ID = 1
 
 # Sending Email
