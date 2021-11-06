@@ -47,6 +47,7 @@ async function handleLogout(event, props) {
 
 const isAuth = user?.isAuth;
 const isAdmin = user?.isAdmin;
+
   return (
     <>
     <Header isAuth={isAuth} isAdmin={isAdmin} handleLogout={handleLogout}/>

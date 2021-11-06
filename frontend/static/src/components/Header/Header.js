@@ -27,7 +27,6 @@ function Header() {
                                 Profile
                             </Link>
                         </li>
-                    
                     </ul>
                 </div>
             </nav>
