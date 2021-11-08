@@ -5,6 +5,8 @@ import Header from './../Header/Header'
 import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
 import Cookies from 'js-cookie';
+import LandingPage from './../Landing/LandingPage';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -57,6 +59,9 @@ const isAdmin = user?.isAdmin;
       </Route>
       <Route path='/login'>
         <LoginForm isAuth={isAuth} setUser={setUser}/>
+      </Route>
+      <Route path='/'>
+        <LandingPage />
       </Route>
     </Switch>
     </>

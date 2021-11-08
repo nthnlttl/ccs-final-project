@@ -3,6 +3,7 @@ import {withRouter, Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 function RegistrationForm(props) {
+
     const [user,setUser] = useState({
         username: '',
         email: '',
@@ -51,7 +52,7 @@ function RegistrationForm(props) {
     }
 
     if(props.isAuth) {
-        return <Redirect to='/' />
+        return <Redirect to='/home' />
     }
 
     return (

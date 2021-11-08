@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'frontend.apps.FrontendConfig',
     'animals.apps.AnimalsConfig',
+    'api.apps.ApiConfig',
 ]
 
 # Setting the permission policy

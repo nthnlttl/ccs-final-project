@@ -1,9 +1,17 @@
-import { NavLink, withRouter } from 'react-router-dom'
-import { state } from 'react'
+import { useState } from 'react'
+
+
 function LandingPage() {
+
     return (
         <>
+        <div className="container">
+            <h1>Landing Page</h1>
+
+        </div>
         
         </>
     )
 }
+
+export default LandingPage;
