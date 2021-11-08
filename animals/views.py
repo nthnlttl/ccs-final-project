@@ -10,6 +10,9 @@ class AnimalListAPIView(generics.ListCreateAPIView):
     queryset = Animal.objects.all()
     serializer_class = AnimalSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 class AnimalDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Animal.objects.all()
     serializer_class = AnimalSerializer
