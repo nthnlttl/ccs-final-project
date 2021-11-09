@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 import LandingPage from './../Landing/LandingPage';
 
 
-function App() {
+function App(props) {
   const [user, setUser] = useState(null);
 
   const history = useHistory();
@@ -48,17 +48,17 @@ async function handleLogout(event, props) {
 }
 
 const isAuth = user?.isAuth;
-const isAdmin = user?.isAdmin;
+// const isAdmin = user?.isAdmin;
 
   return (
     <>
-    <Header isAuth={isAuth} isAdmin={isAdmin} handleLogout={handleLogout}/>
+    <Header />
     <Switch>
       <Route path='/registration'>
-        <RegistrationForm isAuth={isAuth} setUser={setUser}/>
+        <RegistrationForm />
       </Route>
       <Route path='/login'>
-        <LoginForm isAuth={isAuth} setUser={setUser}/>
+        <LoginForm isAuth={isAuth} user={user} setUser={setUser} />
       </Route>
       <Route path='/'>
         <LandingPage />

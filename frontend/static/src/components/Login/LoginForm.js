@@ -37,8 +37,8 @@ function LoginForm(props) {
             console.log(response);
         } else {
             const data = await response.json();
-            Cookies.set('Authorization', `Token ${data.key}`);
-            props.setUser((prevState) => ({
+            Cookies.set('Authorization', `Token${data.key}`);
+            setUser((prevState) => ({
                 ...prevState,
                 isAuth: true,
             }))
@@ -77,7 +77,7 @@ function LoginForm(props) {
                     value={user.password}
                 />
             </div>
-            <button type='submit' className='btn btn-success' id='login-button'>Login</button>
+            <button type='submit' className='btn btn-success'>Login</button>
         </form>
     )
 }

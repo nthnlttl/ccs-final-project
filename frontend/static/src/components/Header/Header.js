@@ -1,9 +1,11 @@
 import React, {useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import './Header.css';
 import { Button } from './../Button';
 
-function Header() {
+
+
+function Header(props) {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -49,6 +51,11 @@ function Header() {
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Adoption Services
                             </Link>
+                        </li>
+                        <li>
+                            <NavLink to='/Login' className='nav-links' onClick={closeMobileMenu}>
+                                Login
+                            </NavLink>
                         </li>
                     </ul>
                     {button && <Button buttonStyle='btn--outline'>Register</Button>}

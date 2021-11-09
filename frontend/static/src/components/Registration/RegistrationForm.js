@@ -34,7 +34,7 @@ function RegistrationForm(props) {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json',
-                    'X-CSFRToken':Cookies.get('csfrtoken'),
+                    'X-CSRFToken':Cookies.get('csrftoken'),
                 },
                 body: JSON.stringify(user)
             };
