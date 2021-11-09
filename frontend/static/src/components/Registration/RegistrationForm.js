@@ -45,15 +45,17 @@ function RegistrationForm(props) {
             } else {
                 const data = await response.json();
                 Cookies.set('Authorization', `Token ${data.key}`);
-                props.setIsAuth(true);
+                props.setUser((prevState) => ({
+                    ...prevState, isAuth: true,
+                }));
                 props.history.push('/');
             }
         }
     }
 
-    if(props.isAuth) {
-        return <Redirect to='/home' />
-    }
+//    if(props.isAuth) {
+//        return <Redirect to='/home' />
+//    }
 
     return (
         <form className='mt-3 col-6' onSubmit={handleSubmit}>
