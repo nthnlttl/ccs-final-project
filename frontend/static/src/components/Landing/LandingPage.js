@@ -8,11 +8,9 @@ function LandingPage(props) {
     return (
         <>
         <div className="container">
-            <h1>Landing Page</h1>
+            <h1>Welcome to S.N.A.P.</h1>
         </div>
-        <div className='header-login-form'>
-            <LoginForm />
-        </div>
+        
         </>
     )
 }

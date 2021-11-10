@@ -57,25 +57,67 @@ export default function Animals(props) {
                     type='text'
                     className='form-control'
                     id='name'
-                    placeholder='Enter Pet Name.'
+                    placeholder='Pet Name.'
                     onChange={handleInput}
                     required
                     name='name'
-                    value={animal.animal}
+                    value={animal.name}
                 />
-                <div className='form-group text-left mb-3'>
-                <label htmlFor='name'>Name</label>
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='type'>Animal Type</label>
                 <input
-                    type=
+                    type='text'
                     className='form-control'
-                    placeholder=
+                    id='type'
+                    placeholder='Animal Type'
                     onChange={handleInput}
                     required
-                    name=
-                    value=
+                    name='type'
+                    value={animal.type}
                 />
             </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='breed'>Animal Breed</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='breed'
+                    placeholder='Animal Breed'
+                    onChange={handleInput}
+                    required
+                    name='breed'
+                    value={animal.breed}
+                />
             </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='size'>Animal Size</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='size'
+                    placeholder='Animal Size'
+                    onChange={handleInput}
+                    required
+                    name='size'
+                    value={animal.size}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='gender'>Animal Gender</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='gender'
+                    placeholder='Animal Gender'
+                    onChange={handleInput}
+                    required
+                    name='gender'
+                    value={animal.gender}
+                />
+            </div>
+            
+            
         </form>
     )
 }
