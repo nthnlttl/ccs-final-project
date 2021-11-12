@@ -11,8 +11,8 @@ class Animal(models.Model):
     age = models.PositiveIntegerField()
     color = models.CharField(max_length=255)
     coat = models.CharField(max_length=255, null=True)
-    good_with_children = models.BooleanField(default=False)
-    house_trained = models.BooleanField(default=False)
+    good_with_children = models.CharField(max_length=255)
+    house_trained = models.CharField(max_length=255)
     picture = models.ImageField(upload_to='animals/', null=True)
     health_issues = models.CharField(max_length=255, null=True)
 

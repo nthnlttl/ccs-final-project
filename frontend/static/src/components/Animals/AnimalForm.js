@@ -1,4 +1,6 @@
-import React from 'react'
+import { useState, react } from 'react';
+import Cookies from 'js-cookie'
+import 
 
 
 export default function Animals(props) {
@@ -11,10 +13,13 @@ export default function Animals(props) {
         age: '',
         color: '',
         coat: '',
-        good_with_children: null=false,
-        house_trained: null=false,
-        picture: null=true,
+        good_with_children: '', 
+        house_trained: '',
+        health_issues: '',
+        image: null,
     });
+
+    const [preview, setPreview] = useState('');
 
     function handleInput(event) {
         const {name, value} = event.target;
@@ -22,7 +27,18 @@ export default function Animals(props) {
             ...prevState,
             [name]: value,
         }));
-    }
+    };
+
+    function handleImage(event) {
+        const file = event.target.files[0];
+        setAnimal({...animal, image: file });
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setPreview(reader.result);
+        };
+        reader.readAsDataURL(file);
+    };
 
     function handleError(error) {
         console.warn(error);
@@ -35,6 +51,7 @@ export default function Animals(props) {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',
+                'X-CSRFToken': Cookies.get('csrftoken'),
             },
             body: JSON.stringify(animal)
         };
@@ -116,8 +133,96 @@ export default function Animals(props) {
                     value={animal.gender}
                 />
             </div>
-            
-            
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='age'>Animal Age</label>
+                <input
+                    type='number'
+                    className='form-control'
+                    id='age'
+                    placeholder='Animal Age'
+                    onChange={handleInput}
+                    required
+                    name='age'
+                    value={animal.age}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='color'>Animal Color</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='color'
+                    placeholder='Animal Color'
+                    onChange={handleInput}
+                    required
+                    name='color'
+                    value={animal.color}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='coat'>Animal coat</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='coat'
+                    placeholder='Animal Coat'
+                    onChange={handleInput}
+                    required
+                    name='coat'
+                    value={animal.coat}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='health_issues'>Current Health Problems</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='health_issues'
+                    placeholder='Health issues'
+                    onChange={handleInput}
+                    required
+                    name='health_issues'
+                    value={animal.health_issues}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='good_with_children'>Is your pet good with chilrdren?</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='good_with_children'
+                    placeholder='Yes/No'
+                    onChange={handleInput}
+                    required
+                    name='good_with_children'
+                    value={animal.good_with_children}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='house_trained'>Is your pet house trained?</label>
+                <input
+                    type='text'
+                    className='form-control'
+                    id='house_trained'
+                    placeholder='Yes/No'
+                    onChange={handleInput}
+                    required
+                    name='house_trained'
+                    value={animal.house_trained}
+                />
+            </div>
+            <div className='form-group text-left mb-3'>
+                <label htmlFor='picture'>Upload a picture of your pet</label>
+                <input
+                    onChange={handleImage}
+                    type='file'
+                    className='form-control'
+                />
+                {animal.image && (
+                    <img src={preview} alt='' className='preview-image' />
+                )}
+            </div>
+            <button type='submit' className='btn btn-success'>Submit</button>
         </form>
     )
 }
