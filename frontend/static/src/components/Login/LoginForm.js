@@ -46,9 +46,9 @@ function LoginForm(props) {
         }
     }
 
-    if(props.isAuth) {
-        return <Redirect to='/' />
-    }
+    //if(props.isAuth) {
+    //    return <Redirect to='/registration' />
+    //}
 
     return (
         <form className='mt-3 col-6' onSubmit={handleSubmit}>

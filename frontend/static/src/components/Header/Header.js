@@ -31,7 +31,7 @@ function Header(props) {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        S.N.P.A  <i class="fas fa-dragon"/>
+                        S.N.A.P.  <i class="fas fa-dragon"/>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -43,17 +43,17 @@ function Header(props) {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/Profile' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
                                 Profile
                             </Link>
                         </li>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Adoption Services
+                                Local Shelters
                             </Link>
                         </li>
                         <li>
-                            <NavLink to='/Login' className='nav-links' onClick={closeMobileMenu}>
+                            <NavLink to='/login' className='nav-links' onClick={closeMobileMenu}>
                                 Login
                             </NavLink>
                         </li>
@@ -65,4 +65,4 @@ function Header(props) {
     )
 }
 
-export default Header
+export default withRouter(Header)

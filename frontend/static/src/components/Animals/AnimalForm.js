@@ -1,6 +1,5 @@
 import { useState, react } from 'react';
 import Cookies from 'js-cookie'
-import 
 
 
 export default function Animals(props) {
@@ -31,7 +30,10 @@ export default function Animals(props) {
 
     function handleImage(event) {
         const file = event.target.files[0];
-        setAnimal({...animal, image: file });
+        setAnimal({
+            ...animal,
+            image: file, 
+        });
 
         const reader = new FileReader();
         reader.onloadend = () => {
@@ -46,24 +48,42 @@ export default function Animals(props) {
 
     async function handleSubmit(event) {
         event.preventDefault();
+        const formData = new FormData();
+
+        formData.append('name', animal.name);
+        formData.append('type', animal.type);
+        formData.append('breed', animal.breed);
+        formData.append('size', animal.size);
+        formData.append('gender', animal.gender);
+        formData.append('age', animal.age);
+        formData.append('color', animal.color);
+        formData.append('coat', animal.coat);
+        formData.append('good_with_children', animal.good_with_children);
+        formData.append('house_trained', animal.house_trained);
+        formData.append('health_issues', animal.health_issues);
+        formData.append('image', animal.image);
 
         const options = {
             method: 'POST',
             headers: {
-                'Content-Type':'application/json',
+               // 'Content-Type':'application/json',
                 'X-CSRFToken': Cookies.get('csrftoken'),
             },
-            body: JSON.stringify(animal)
+            body: formData
+            //body: JSON.stringify(animal)
         };
 
         const response = await fetch('/api_v1/animals/', options).catch(handleError);
         if(!response) {
             console.log(response);
         } else {
+            console.log(response)
             const data = await response.json();
-            setAnimal((prevState) => ({
-                ...prevState
-            }))
+            setAnimal(data);
+           // const data = await response.json();
+           //setAnimal((prevState) => ({
+           //     ...prevState
+            
         }
     }
     return (

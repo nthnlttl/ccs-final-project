@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import LoginForm from './../Login/LoginForm';
 import AnimalForm from './../Animals/AnimalForm';
+import ProfileForm from './../Profile/ProfileForm';
 function LandingPage(props) {
 
     
@@ -8,9 +9,10 @@ function LandingPage(props) {
     return (
         <>
         <div className="container">
-            <h1>Welcome to S.N.A.P.</h1>
+            <h1>S.N.A.P.</h1>
+            <p>Special Needs Animal Partnership</p>
         </div>
-        <AnimalForm />
+        
 
         </>
     )
