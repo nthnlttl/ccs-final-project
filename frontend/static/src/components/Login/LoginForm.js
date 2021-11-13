@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {withRouter, Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import './LoginForm.css';
 
 function LoginForm(props) {
     const [user, setUser] = useState({
@@ -51,6 +52,7 @@ function LoginForm(props) {
     //}
 
     return (
+    <div className='login-container'>
         <form className='mt-3 col-6' onSubmit={handleSubmit}>
             <div className='form-group text-left mb-3'>
                 <label htmlFor='username'>Username</label>
@@ -79,6 +81,7 @@ function LoginForm(props) {
             </div>
             <button type='submit' className='btn btn-success'>Login</button>
         </form>
+    </div>
     )
 }
 

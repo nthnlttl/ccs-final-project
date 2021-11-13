@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import LoginForm from './../Login/LoginForm';
-import AnimalForm from './../Animals/AnimalForm';
-import ProfileForm from './../Profile/ProfileForm';
+import './LandingPage.css';
 function LandingPage(props) {
 
     

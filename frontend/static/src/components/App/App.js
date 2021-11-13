@@ -26,7 +26,7 @@ useEffect(() =>  {
   checkAuth();
 }, [history]);
 
-async function handleLogout(event, props) {
+async function handleLogoutSubmit(event, props) {
   const options = {
     method: 'POST',
     headers: {

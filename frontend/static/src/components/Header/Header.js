@@ -57,6 +57,11 @@ function Header(props) {
                                 Login
                             </NavLink>
                         </li>
+                        <li>
+                            <Link to='/' className='nav-links' onClick={() => props.handleLogoutSubmit()}>
+                                Logout
+                            </Link>
+                        </li>
                     </ul>
                     {button && <Button buttonStyle='btn--outline'>Register</Button>}
                 </div>
