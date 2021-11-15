@@ -10,6 +10,13 @@ function LandingPage(props) {
             <h1>S.N.A.P.</h1>
             <p>Special Needs Animal Partnership</p>
         </div>
+        <div>
+            Special Needs Dogs
+        </div>
+        <div>
+            Special Needs Cats
+        </div>
+        
         
 
         </>
