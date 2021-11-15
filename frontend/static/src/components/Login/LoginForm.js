@@ -2,6 +2,8 @@ import {useState} from 'react'
 import {withRouter, Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './LoginForm.css';
+import { Button } from 'react-bootstrap';
+
 
 function LoginForm(props) {
     const [user, setUser] = useState({
@@ -79,7 +81,7 @@ function LoginForm(props) {
                     value={user.password}
                 />
             </div>
-            <button type='submit' className='btn btn-success'>Login</button>
+            <Button type='submit' className='btn btn-success'>Login</Button>
         </form>
     </div>
     )

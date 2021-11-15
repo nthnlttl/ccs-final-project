@@ -49,8 +49,8 @@ function Header(props) {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Local Shelters
+                            <Link to='/up_for_adoption' className='nav-links' onClick={closeMobileMenu}>
+                                Adoption
                             </Link>
                         </li>
                         <li>

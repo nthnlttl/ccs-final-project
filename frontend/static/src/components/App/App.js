@@ -1,11 +1,13 @@
 import {useState, useEffect} from 'react';
-import {  Route, Switch, withRouter, useHistory} from 'react-router-dom';
+import {  Route, Switch, useHistory} from 'react-router-dom';
 import './App.css';
 import Header from './../Header/Header'
 import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
 import Cookies from 'js-cookie';
 import LandingPage from './../Landing/LandingPage';
+import PetFinder from '../PetFinder/PetFinder';
+import AnimalForm from './../Animals/AnimalForm'
 
 
 function App(props) {
@@ -62,6 +64,9 @@ const isAuth = user?.isAuth;
       </Route>
       <Route path='/'>
         <LandingPage />
+      </Route>
+      <Route path='/up_for_adoption'>
+        <AnimalForm />
       </Route>
     </Switch>
     </>
