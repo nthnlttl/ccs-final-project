@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {  Route, Switch, useHistory} from 'react-router-dom';
+import {  Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import Header from './../Header/Header'
 import RegistrationForm from './../Registration/RegistrationForm';

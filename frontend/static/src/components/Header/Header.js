@@ -54,17 +54,13 @@ function Header(props) {
                             </Link>
                         </li>
                         <li>
-                            <NavLink to='/login' className='nav-links' onClick={closeMobileMenu}>
-                                Login
+                            <NavLink to='/' className='nav-links' onClick={() => props.handleLogoutSubmit()}>
+                                Logout
                             </NavLink>
                         </li>
-                        <li>
-                            <Link to='/' className='nav-links' onClick={() => props.handleLogoutSubmit()}>
-                                Logout
-                            </Link>
-                        </li>
+                        
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>Register</Button>}
+                    {button && <Button buttonStyle='btn--outline'>Login/Register</Button>}
                 </div>
             </nav>
         </>
