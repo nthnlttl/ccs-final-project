@@ -6,14 +6,29 @@ import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
 import Cookies from 'js-cookie';
 import LandingPage from './../Landing/LandingPage';
-import PetFinder from '../PetFinder/PetFinder';
-import AnimalForm from './../Animals/AnimalForm'
-
+import AnimalForm from './../Animals/AnimalForm';
+import AnimalList from './../Animals/AnimalList';
+import ProfileForm from './../Profile/ProfileForm';
 
 function App(props) {
-  const [user, setUser] = useState(null);
+  const [admin, setAdmin] = useState({
+    username:'',
+    email:'',
+    is_staff: null,
+  });
+
+  const [profile, setProfile] = useState({
+    alias:'',
+    image: null,
+  })
+
+  const [user, setUser] = useState({
+    username:'',
+    password:'',
+  })
 
   const history = useHistory();
+  
 
 useEffect(() =>  {
   const checkAuth = async () => {
@@ -28,14 +43,14 @@ useEffect(() =>  {
   checkAuth();
 }, [history]);
 
-async function handleLogoutSubmit(event, props) {
+async function handleLogoutSubmit(event) {
   const options = {
     method: 'POST',
     headers: {
       'Content-Type':'application/json',
       'X-CSRFToken':Cookies.get('csrftoken'),
     },
-    body: JSON.stringify(props.user),
+    body: JSON.stringify(user),
   };
   const response = await fetch('/rest-auth/logout/', options);
   if (!response) {
@@ -54,7 +69,7 @@ const isAuth = user?.isAuth;
 
   return (
     <>
-    <Header />
+    <Header handleLogoutSubmit={handleLogoutSubmit} isAuth={isAuth} />
     <Switch>
       <Route path='/registration'>
         <RegistrationForm />
@@ -62,11 +77,17 @@ const isAuth = user?.isAuth;
       <Route path='/login'>
         <LoginForm isAuth={isAuth} user={user} setUser={setUser} />
       </Route>
-      <Route path='/'>
+      <Route exact path='/'>
         <LandingPage />
       </Route>
       <Route path='/up_for_adoption'>
         <AnimalForm />
+      </Route>
+      <Route exact path='/animal_listing'>
+        <AnimalList />
+      </Route>
+      <Route path='/profile'>
+        <ProfileForm />
       </Route>
     </Switch>
     </>

@@ -1,6 +1,6 @@
 import { useEffect, createContext, useState } from 'react';
 
-export const AuthContext = createContext();
+const AuthContext = createContext();
 
 function PetFinder({ Component, pageProps }) {
     const [accessToken, setAccessToken] = useState(null);

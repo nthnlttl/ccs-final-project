@@ -60,7 +60,7 @@ function Header(props) {
                         </li>
                         
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>Login/Register</Button>}
+                    {button && <Button buttonStyle='btn--outline'>Register</Button>}
                 </div>
             </nav>
         </>

@@ -1,3 +1,4 @@
+import { petFinderKey, petFinderSecret } from '../../apikey';
 
 export default async (req, res) => {
   const params = new URLSearchParams();

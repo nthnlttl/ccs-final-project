@@ -1,8 +1,8 @@
 import { useState, react } from 'react';
 import Cookies from 'js-cookie'
+import { withRouter } from 'react-router-dom';
 
-
-export default function Animals(props) {
+function AnimalForm(props) {
     const [animal, setAnimal] = useState({
         name: '',
         type: '',
@@ -61,7 +61,7 @@ export default function Animals(props) {
         formData.append('good_with_children', animal.good_with_children);
         formData.append('house_trained', animal.house_trained);
         formData.append('health_issues', animal.health_issues);
-        formData.append('image', animal.image);
+        formData.append('picture', animal.image);
 
         const options = {
             method: 'POST',
@@ -232,11 +232,12 @@ export default function Animals(props) {
                 />
             </div>
             <div className='form-group text-left mb-3'>
-                <label htmlFor='picture'>Upload a picture of your pet</label>
+                <label htmlFor='picture'>Image</label>
                 <input
                     onChange={handleImage}
                     type='file'
                     className='form-control'
+                    name='image'
                 />
                 {animal.image && (
                     <img src={preview} alt='' className='preview-image' />
@@ -246,3 +247,5 @@ export default function Animals(props) {
         </form>
     )
 }
+
+export default withRouter(AnimalForm);

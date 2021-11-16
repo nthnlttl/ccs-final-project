@@ -1,9 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './AnimalCard.css'
 
-export default function AnimalCard(props) {
+
+export default function AnimalSelection(props) {
     return (
         <>
         <div>
@@ -31,6 +31,7 @@ export default function AnimalCard(props) {
              <Button variant="primary">Go somewhere</Button>
             </Card.Body>
         </Card>
+        <AnimalForm />
     </div>
     </>
         
