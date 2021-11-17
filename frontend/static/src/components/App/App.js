@@ -9,6 +9,7 @@ import LandingPage from './../Landing/LandingPage';
 import AnimalForm from './../Animals/AnimalForm';
 import AnimalList from './../Animals/AnimalList';
 import ProfileForm from './../Profile/ProfileForm';
+import AnimalCard from './../PetFinder/animal-card';
 
 function App(props) {
   const [admin, setAdmin] = useState({

@@ -1,6 +1,7 @@
 import ResultPane from './result-pane';
 import { useEffect, useState, useContext } from 'react';
-import { AuthContext } from './oauth-token';
+import { AuthContext } from './../PetFinder/PetFinder';
+
 
 export default () => {
     const [results, setResults] = useState(null);

@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { Grid } from "@material-ui/core";
 import AnimalCard from "./animal-card";
@@ -22,4 +23,4 @@ const ResultPane = (props) => {
   );
 };
 
-export default ResultPane;
+export default withRouter(ResultPane);

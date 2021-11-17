@@ -1,41 +1,16 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+// import * as React from 'react';
+// import Card from '@mui/material/Card';
+// import CardActions from '@mui/material/CardActions';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
+// import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
+
+// function AnimalCard() {
+//   return (
+    
+//   )
+//   }
 
 
-export default function AnimalSelection(props) {
-    return (
-        <>
-        <div>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="" />
-                <Card.Body>
-                <Card.Title>Special Needs Cats</Card.Title>
-                <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-                </Card.Text>
-                 <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-        </div>
-        <div>
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="" />
-            <Card.Body>
-            <Card.Title>Special Needs Dogs</Card.Title>
-            <Card.Text>
-  Some quick example text to build on the card title and make up the bulk of
-  the card's content.
-            </Card.Text>
-             <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-        </Card>
-        <AnimalForm />
-    </div>
-    </>
-        
-    )
-}
-
-
+// export default AnimalCard;
